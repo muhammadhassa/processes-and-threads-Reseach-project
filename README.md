@@ -9,3 +9,5 @@
 **Mark** - topic on pros and cons of processes and threads
 
 **Muhammad** - Data Sharing, Speed up and other related topics
+
+**Two references per member**
