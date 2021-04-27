@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
+    <title>Advantages and Disadvantages of Processes</title>
   </head>
 <body>
 
@@ -33,9 +33,73 @@
 
     <div class="container mt-2" style="margin-left: 10px;">
         <!--Start writing here-->
-        <h1>Insert Title</h1>
-        <p>text</p>
-    </div>
+        <h1>Advantages of Processes</h1>
+        <p>In this section, I'm going to discuss about the advanatges of processes compared to threads.</p>
+        <ul>
+          <li>
+            <p>
+              One advantage of processes is the fact that each process has it's own memory space
+              separate from other processes with each process consisting of code text, data containing global variables,
+              a stack that consists of local variables for function parameters, running procedure calls and return addresses,
+              and a heap which consists of dynamically allocated during run time. If one process corrupted it's own memory
+              space, the other processes will not be affected.
+            </p>
+            <img src="../imgs/Mark/Process_own _memory.png" style="display: block;margin-left: auto;margin-right: auto;">
+            <br>
+          </li>
+          <li>
+            <p>
+              Using processes allows each computation with it's own virtual machine. So each computation is independent.
+            </p>
+          </li>
+          <li>
+            <p>
+              Threads must run only on the same machine while processes can run on different machines.
+            </p>
+          </li>
+        </ul>
+
+        <h1>Disadvantages of Processes</h1>
+        <p>In this section, I'm going to discuss the disadvanatages of processes</p>
+        <ul>
+          <li>
+            <p>
+              Processes are expensive in terms of resource consumption. Because of this, processes takes up
+              memory.
+            </p>
+          </li>
+          <li>
+            <p>
+              Processes are also expensive in terms of time consumption. Because of this, processes needs more time for
+              termination.
+            </p>
+          </li>
+          <li>
+            <p>Processes needs more time for creation which is the making of children processes.[1]</p>
+          </li>
+          <li>
+            <p>
+              Processes take more time in context switching between different processes even if they
+              all belong to the same operating system.
+            </p>
+          </li>
+        </ul>
+
+        <h1>References/Further Reading</h1>
+        <p>Process creation, Process spawning in operating systems by Prof. Fazal Rehman Shamil. Taken from:
+          <br>
+        <a href="https://t4tutorials.com/process-creation-process-spawning-in-operating-systems/">
+          https://t4tutorials.com/process-creation-process-spawning-in-operating-systems/
+        </a>
+        </p>
+        <br>
+
+      </div>
+
+      <a href="page1.html" style="margin-left: 20px;">&lt&ltPrevious - Similarities and Differences Between Processes and Threads</a>
+      <a href="page3.html" style="float: right;margin-right: 20px;">Advantages and Disadvantages of Threads - Next&gt&gt</a>
+      <br>
+      <br>
 
 
 </body>
