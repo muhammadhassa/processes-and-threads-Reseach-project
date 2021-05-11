@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
+    <title>Introduction and Overview of Process Management</title>
   </head>
 <body>
 
@@ -33,10 +33,18 @@
 
     <div class="container mt-2" style="margin-left: 10px;">
         <!--Start writing here-->
-        <h1>Insert Title</h1>
-        <p>text</p>
-    </div>
-
+        <h1>Introduction and Overview of Process Management</h1>
+        <p>A process is simply a program in execution. It can be assigned to, and executed on, a processor. A majority of the time one program has one process associated with it. In rare cases there are exceptions such as within Google Chrome. Also, if multiple users are executing the same sequential program, multiple processes will be involved. Each process has different components which allow it to perform its specific tasks (E.g. Stack is used for local variable allocation and heap is used for dynamic variable allocation). Each process needs each of these components to run as a program. At any one time hundreds of processes can be running on a computer and it may be useful to view detailed information about each process and how much memory space it is taking up. System slow-down time can be reduced by subsequently destroying unneeded processes. In Windows this can be accomplished easily by using the Task Manager. In Linux or Unix run the “top” or “ps aux” command on the command prompt to display running processes and further relevant information on these processes.</p>
+		<p>When a program is stored on disk it is known as a passive entity. It becomes an active entity when the executable file is loaded to memory, thus beginning its execution as a process.</p>
+		<p>An operating system should intelligently handle processes in such a way that the system runs at maximal efficiency in any given situation. The system should understand the state of the process being handled. This state can change through multiple phases, be it that the process has just been created, is waiting to run, waiting for access to a device, or has been interrupted by other processes. At the right times, the system should create new processes, switch between them, pause them or suspend them and ideally this will allow the operating and its programs to run as seamlessly as possible.</p>
+		<p>The operating system will utilise a Protocol Control Block to handle processes in an effective manner. Useful information is saved here including the current state of the process, what instruction it is due to perform net and which devices have been allocated to the process. Management is possible when the current process state is saved, allowing for a safe switch to a new process before the older process is later reestablished based on the previously saved information.</p>
+		<img src="../imgs/Conor/pcb.png" style="display: block;margin-left: auto;margin-right: auto;">
+		<p>When a process is paused and saved, enabling the switch to a separate process, we are utilising context switching. This is the basis for allowing the operating system to engage in multi tasking. The separate processes do not conflict and we can depart from one to another whenever needed.</p>
+	</div>
+	
+	<a href="page2.html" style="float: right;margin-right: 20px;">Various States of a Process - Next&gt&gt</a>
+    <br>
+    <br>
 
 </body>
 </html>

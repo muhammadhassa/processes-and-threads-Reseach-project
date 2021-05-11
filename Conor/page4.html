@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
+    <title>Interprocess Communication</title>
   </head>
 <body>
 
@@ -33,9 +33,70 @@
 
     <div class="container mt-2" style="margin-left: 10px;">
         <!--Start writing here-->
-        <h1>Insert Title</h1>
-        <p>text</p>
-    </div>
+        <h1>Interprocess Communication</h1>
+        <p>Processes can be split into 2 types with regards to their ability to communicate with other processes:</p>
+		<ul>
+		  <li>
+			<p>
+			Independent Processes have no capability to affect other processes, likewise other processes have no affect on them.
+			</p>
+		  </li>
+		  <li>
+			<p>
+			Cooperating processes can have an affect on other processes and can be affected by other processes.
+			</p>
+		  </li>
+		</ul>
+		<p>Cooperating processes require a way to enable their inter-communication, this usually involves one of the following two methods:</p>
+		<ul>
+		  <li>
+			<p>
+			<b>Shared Memory.</b> This can be the faster method but is complicated to set up. It functions best in sharing large amounts of information on a single computer. It does not work well across multiple machines.
+			</p>
+		  </li>
+		  <li>
+			<p>
+			<b>Message-Passing.</b> This is a slower method but can be set up quickly and functions well across multiple machines. It is preferably used when passing a smaller amount of information across multiple computers.
+			</p>
+		  </li>
+		</ul>
+		<hr>
+		<b>Shared Memory Systems</b>
+		<p>
+		The memory to be shared is initially found within the address space of a particular process. System calls are made in order to make that memory publicly available. Other processes can then produce a system call to attach the memory onto their own address space. A few messages need be put back and forth between the processes to establish initial set-up and co-ordination.
+		</p>
+		<p>
+		In a typical example of this method of intercommunication, one process would be producing the data and the other process consuming that data. The data will be passed via an intermediary buffer. This type of buffer can be either bounded or unbounded. On a bounded buffer, the producer must wait until space becomes available on the buffer. On the unbounded buffer, the producer never needs to wait.
+		</p>
+		Here is an example of shared memory communication using a circular queue. We set up the following data in the area of shared memory:
+		<img src="../imgs/Conor/p4_fig1.jpg" style="display: block;">
+		This is the producer process. The buffer is full when "in" is one less than "out":
+		<img src="../imgs/Conor/p4_fig2.jpg" style="display: block;">
+		This is the consumer process. The buffer is empty when "in" is equal to "out":
+		<img src="../imgs/Conor/p4_fig3.jpg" style="display: block;">
+		<hr>
+		<b>Message-Passing Systems</b>
+		<p>
+		For message-passing, the minimum requirement is to be able to support system calls for "send message" and "receive message". A communication link must then be established. 3 further issues need to be resolved, they are explain as follows.
+		</p>
+		<p>
+		Naming - In direct communication, the name of the receiver must be known by the sender in order to pass the message. In indirect communication, mailboxes or ports can be used to send the message. 
+		</p>
+		<p>
+		Synchronization - The sending or receiving of messages can be either blocking or non-blocking.
+		</p>
+		<p>
+		Buffering - Messages are passed via queues in one of three confgurations. With zero capacity, messages cannot be stored in queues, so senders must block until receivers accept. With bounded capacity, the queue has a finite capacity. If the queue is full, senders must block. With unbounded capacity, the queue has infinite capacity and senders never need to block.
+		</p>
+		<hr>
+		<h1>References/Further Reading</h1>
+        <p><b>Comprehensive explanation of processes including interprocess communication</b>
+          <br>
+          <a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html">https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html</a>
+        </p>
+	</div>
+	
+	<a href="page3.html" style="margin-left: 20px;">&lt&ltPrevious - Queues and Schedulers</a>
 
 
 </body>
