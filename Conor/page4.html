@@ -69,11 +69,11 @@
 		In a typical example of this method of intercommunication, one process would be producing the data and the other process consuming that data. The data will be passed via an intermediary buffer. This type of buffer can be either bounded or unbounded. On a bounded buffer, the producer must wait until space becomes available on the buffer. On the unbounded buffer, the producer never needs to wait.
 		</p>
 		Here is an example of shared memory communication using a circular queue. We set up the following data in the area of shared memory:
-		<img src="../imgs/Conor/p4_fig1.jpg" style="display: block;">
+		<img src="../imgs/Conor/p4_fig1.jpg" style="display: block;" alt="C code demonstrating the process of shared memory communication (Video page 4 for further explanation)">
 		This is the producer process. The buffer is full when "in" is one less than "out":
-		<img src="../imgs/Conor/p4_fig2.jpg" style="display: block;">
+		<img src="../imgs/Conor/p4_fig2.jpg" style="display: block;" alt="C code demonstrating the process of shared memory communication (Video page 4 for further explanation)">
 		This is the consumer process. The buffer is empty when "in" is equal to "out":
-		<img src="../imgs/Conor/p4_fig3.jpg" style="display: block;">
+		<img src="../imgs/Conor/p4_fig3.jpg" style="display: block;" alt="C code demonstrating the process of shared memory communication (Video page 4 for further explanation)">
 		<hr>
 		<b>Message-Passing Systems</b>
 		<p>
@@ -88,6 +88,12 @@
 		<p>
 		Buffering - Messages are passed via queues in one of three confgurations. With zero capacity, messages cannot be stored in queues, so senders must block until receivers accept. With bounded capacity, the queue has a finite capacity. If the queue is full, senders must block. With unbounded capacity, the queue has infinite capacity and senders never need to block.
 		</p>
+		<hr>
+
+		<h1>Summary Video for Diagrams</h1>
+		<b>My attempt at audio explanation of each diagram I've used to help with any accessibility issues</b><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nGWvJ-SDoT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 		<hr>
 		<h1>References/Further Reading</h1>
         <p><b>Comprehensive explanation of processes including interprocess communication</b>
