@@ -11,3 +11,7 @@
 **Muhammad** - Data Sharing, Speed up and other related topics
 
 **Two references per member**
+
+Statement of Plagiarism
+
+We hereby declare that all information in this assignment has been obtained and presented in accordance with academic rules and ethical conduct and the work we are submitting in the files, except where we have indicated is my own work
